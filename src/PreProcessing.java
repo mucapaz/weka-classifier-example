@@ -10,9 +10,8 @@ public class PreProcessing {
 	
 	
 	
-	public static void generateProcessedDataFromRawData() throws Exception{
-		String base = "raw_data";
-		String destination = "processed_data";
+	public static void generateProcessedDataFromRawData(String base, String destination) throws Exception{
+		
 		String[] classes = {"pos","neg"};
 		
 		File f1 = new File(destination);
@@ -28,7 +27,8 @@ public class PreProcessing {
 		generateBaseClass(base + "/" + classes[1], destination + "/" + classes[1] + "/");
 		
 	}
-
+		
+	
 	public static void generateBaseClass(String wekaClass, String destination) throws Exception{
 		File[] htmlFiles = readFiles(wekaClass);
 
