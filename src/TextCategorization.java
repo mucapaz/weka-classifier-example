@@ -30,8 +30,6 @@ public class TextCategorization {
 		System.out.println("test instances");
 		System.out.println(test.size());
 		
-		
-		
 		classifier.buildClassifier(train);	
 
 		return generateEvaluation(classifier,test);

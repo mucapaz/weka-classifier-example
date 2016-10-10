@@ -12,9 +12,15 @@ public class Main {
 
 		Instances data = TextCategorization.directoryToInstances("raw_data_100");
 	
-		J48 classifier = new J48();
-		Evaluation eval = TextCategorization.generateEvaluation(data,classifier, 0.7);
-		TextCategorization.printEvaluation(eval);
+		
+		
+		J48 j48 = new J48();
+		Evaluation eval1 = TextCategorization.generateEvaluation(data,j48, 0.7);
+		TextCategorization.printEvaluation(eval1);
+		
+		SMO smo = new SMO();
+		Evaluation eval2 = TextCategorization.generateEvaluation(data,smo, 0.7);
+		TextCategorization.printEvaluation(eval2);
 		
 	}
 }
