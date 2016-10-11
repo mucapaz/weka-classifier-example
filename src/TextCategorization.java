@@ -40,7 +40,6 @@ public class TextCategorization {
 
 
 	public static void generateARFF(Instances data, String destination) throws Exception{
-		generateARFF(data, destination);
 		
 		ArffSaver saver = new ArffSaver();
 		saver.setInstances(data);
