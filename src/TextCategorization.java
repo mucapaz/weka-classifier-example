@@ -14,8 +14,6 @@ public class TextCategorization {
 
 	public static Evaluation generateEvaluation(Instances data, Classifier classifier, double trainPercent) throws Exception{
 
-		data = applyStringToWordVector(data);
-
 		data.randomize(new Random(0));
 
 		int trainSize = (int) Math.round(data.numInstances() * trainPercent);
@@ -42,7 +40,6 @@ public class TextCategorization {
 
 
 	public static void generateARFF(Instances data, String destination) throws Exception{
-		data = applyStringToWordVector(data);
 		generateARFF(data, destination);
 		
 		ArffSaver saver = new ArffSaver();
@@ -53,7 +50,6 @@ public class TextCategorization {
 	}
 
 	public static Classifier generateModel(Instances data, Classifier classifier) throws Exception{
-		data = applyStringToWordVector(data);
 
 		classifier.buildClassifier(data);
 		
@@ -94,7 +90,7 @@ public class TextCategorization {
 
 	public static Evaluation generateEvaluation(Classifier classifier, Instances data)throws Exception{
 		Evaluation eval = new Evaluation(data);
-		eval.evaluateModel(classifier, data);
+		eval.evaluateModel(classifier, data, new Object[0]);
 		return eval;
 	}
 }
