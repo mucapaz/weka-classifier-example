@@ -35,7 +35,9 @@ public class PreProcessing {
 		for(int i=0;i<htmlFiles.length;i++){
 			String htmlContent = fileToString(htmlFiles[i]);
 			String textContent = discardHTMLTags(htmlContent);
-
+			textContent = textContent.replaceAll("[^a-zA-Z]", " ");
+			
+			
 			textContent = textContent.toLowerCase();
 			
 			stringToFile(textContent, destination + (i));

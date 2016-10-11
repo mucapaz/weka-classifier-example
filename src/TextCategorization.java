@@ -6,6 +6,9 @@ import weka.filters.unsupervised.attribute.*;
 import weka.classifiers.*;
 import weka.core.stemmers.*;
 
+import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.HashSet;
 import java.util.Random;
 import java.io.*;
 
@@ -92,4 +95,6 @@ public class TextCategorization {
 		eval.evaluateModel(classifier, data, new Object[0]);
 		return eval;
 	}
+	
+	
 }
