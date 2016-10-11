@@ -18,7 +18,10 @@ public class Main {
 		
 		Remove remove = new Remove();
 		
-		remove.setAttributeIndices("first-4");
+		int[] ar = new int[2];
+		ar[0] = 0;
+		ar[1] = 1;
+		remove.setAttributeIndicesArray(ar);
 	    remove.setInvertSelection(true);
 	    remove.setInputFormat(data);
 		
