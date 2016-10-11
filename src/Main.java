@@ -19,10 +19,12 @@ public class Main {
 		
 	    TextCategorization.generateARFF(data, "data.arff");
 	    
+	    System.out.println("J48 model");
 		J48 j48 = new J48();
 		Evaluation eval1 = TextCategorization.generateEvaluation(data,j48, 0.7);
 		TextCategorization.printEvaluation(eval1);
 		
+		System.out.println("SMO model");
 		SMO smo = new SMO();
 		Evaluation eval2 = TextCategorization.generateEvaluation(data,smo, 0.7);
 		TextCategorization.printEvaluation(eval2);

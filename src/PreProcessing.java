@@ -46,7 +46,7 @@ public class PreProcessing {
 
 	public static void stringToFile(String content, String destination) throws Exception{
 		File file = new File(destination);
-		System.out.println(destination);
+		//System.out.println(destination);
 		file.createNewFile();
 
 		PrintWriter writer = new PrintWriter(destination, "UTF-8");
