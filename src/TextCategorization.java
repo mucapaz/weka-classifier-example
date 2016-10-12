@@ -43,7 +43,7 @@ public class TextCategorization {
 
 
 	public static void generateARFF(Instances data, String destination) throws Exception{
-		
+		//data.setClassIndex(0);
 		ArffSaver saver = new ArffSaver();
 		saver.setInstances(data);
 		saver.setFile(new File(destination));
