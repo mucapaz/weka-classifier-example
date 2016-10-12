@@ -1,13 +1,9 @@
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 
-import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
+import weka.classifiers.bayes.NaiveBayes;
 import weka.classifiers.functions.SMO;
 import weka.classifiers.trees.J48;
 import weka.core.Instances;
-import weka.filters.Filter;
-import weka.filters.unsupervised.attribute.Remove;
 
 public class Main {
 	public static void main(String[] args) throws Exception{
@@ -28,6 +24,11 @@ public class Main {
 		SMO smo = new SMO();
 		Evaluation eval2 = TextCategorization.generateEvaluation(data,smo, 0.7);
 		TextCategorization.printEvaluation(eval2);
+		
+		System.out.println("NaiveBayes model");
+		NaiveBayes naiveBayes = new NaiveBayes();
+		Evaluation eval3 = TextCategorization.generateEvaluation(data,naiveBayes, 0.7);
+		TextCategorization.printEvaluation(eval3);
 		
 	}
 	
